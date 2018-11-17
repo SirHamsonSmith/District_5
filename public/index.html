@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blunt</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/uikit.css">
+    <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <div class="header">
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+            
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="#">Seed</a></li>
+                    <li class="uk-active"><a href="#">Sapling</a></li>
+                </ul>
+            
+            </div>
+
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="#">User Account</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="body">
+        <img class="logo-size" src="./assets/sprout_logo_2.png" alt="">
+        <input type="text" placeholder="Search seeds" class="search-box">
+        <div class="home-buttons">
+            <button  class="uk-button uk-button-default search-buttons">Seed</button>
+            <button  class="uk-button uk-button-default search-buttons">Sapling</button>
+            <button  class="uk-button uk-button-default search-buttons">Tree</button>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src= "./script/app.js"></script>
+    <script src= "./script/uikit.js"></script>
+    
 </body>
 </html>
