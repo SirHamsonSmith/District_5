@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/uikit.css">
+    <!-- <link rel="stylesheet" href="./css/NewSeed.css"> DANIEL: Added custom style sheet -->
     <title>Sprout (A website to share your ideas)</title>
 </head>
+
 <body>
     <div class="header">
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">Seed</a></li>
-                    <li class="uk-active"><a href="#">Sapling</a></li>
+                <ul class="uk-navbar-nav"> <!-- DANIEL: Removed Seed & Sapling | Replaced with New Seed-->
+                    <li class="uk-active"><a id="new-seed" href="#">New Seed</a></li>
                 </ul>
             </div>
             <div class="uk-navbar-center">
@@ -67,9 +69,11 @@
     </div>
     <div class="results">
     </div>
+    <div class="new-seed"></div>
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="./script/app.js"></script>
     <script src="./script/uikit.js"></script>
 </body>
+
 </html>

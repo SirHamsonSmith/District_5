@@ -29,7 +29,7 @@ module.exports = app => {
     })
 
     app.post('/ideas', (req, res) => {
-        db.ideas.create(req.body)
+            db.ideas.create(req.body)
             .then(() => res.sendStatus(200))
             .catch(e => console.log(e))
     })
@@ -59,13 +59,13 @@ module.exports = app => {
 
     app.put('/votes', (req, res) => {
         db.votes.update(req.body, {
-          where: {
-            topic: req.body.topic
-          }
-        })
-          .then(() => res.sendStatus(200))
-          .catch(e => console.log(e))
-      })
+                where: {
+                    topic: req.body.topic
+                }
+            })
+            .then(() => res.sendStatus(200))
+            .catch(e => console.log(e))
+    })
 
     app.delete('/ideas/:topic', (req, res) => {
         db.ideas.destroy({
