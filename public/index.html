@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/uikit.css">
+<<<<<<< HEAD
     <title>Sprout</title>
+=======
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <title>Sprout (A website to share your ideas)</title>
+>>>>>>> 033bab0148edcbfbbc7179d595e177982f5df62f
 </head>
+
 <body>
     <div class="header">
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
-            
                 <ul class="uk-navbar-nav">
+<<<<<<< HEAD
                     <li class="uk-active"><a href="#">Seed</a></li>
                     <li class="uk-active"><a href="#">Sapling</a></li>
                     <li class="uk-active"><a href="#">Tree</a></li>
+=======
+                    <li class="uk-active"><a id="new-seed" href="#">New Seed</a></li>
+>>>>>>> 033bab0148edcbfbbc7179d595e177982f5df62f
                 </ul>
             </div>
             <div class="uk-navbar-center">
@@ -24,31 +35,32 @@
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">User Account</a></li>
+                    <li class="uk-active">
+                        <a id="u-account">User Account</a>
+                        <div id="sign-in-dropdown" uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li class="uk-active"><a id="sign-in">Sign In</a></li>
+                                <li class="uk-active"><a id="open-profile">Open profile</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a id="sign-up" href="#">Don't have an account? Sign Up</a></li>
+                                <li><a id="sign-out" href="#">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    <!-- <div class="body uk-container uk-container-center" >
-        
-        <img class="logo-size " src="./assets/sprout_logo_2.png" alt="">
-        <div class="search-bar" >
-            <input type="text" placeholder="Search seeds" class="search-box">
-        </div>
-        <div class="home-buttons" >
-            <button  class="uk-button uk-button-default search-buttons ">Seed</button>
-            <button  class="uk-button uk-button-default search-buttons">Sapling</button>
-            <button  class="uk-button uk-button-default search-buttons">Tree</button>
-        </div>
-    </div> -->
-    
-    <div class="wrapper">
-        <div class="uk-container uk-container-center">
-            <div class="logo" uk-grid>
-                <img class="logo-size uk-width-1-1@l" src="./assets/logo_transparent-edit.png" alt="">
+    <div class="wrapper-body">
+        <div class="wrapper">
+            <div class="uk-container uk-container-center">
+                <div class="logo" uk-grid>
+                    <img class="logo-size uk-width-1-1@l" src="./assets/logo_transparent-edit.png" alt="">
+                </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
     
     <div class="wrapper-search">
@@ -67,15 +79,41 @@
                     <button  class="uk-button uk-button-default under-btn">Sapling</button>
                     <button  class="uk-button uk-button-default under-btn">Tree</button>
                     <a href="./discussion.html">Link</a>
+=======
+        <div class="wrapper-search">
+            <div class="uk-container uk-container-center">
+                <div class="search uk-flex-center uk-text-center" uk-grid>
+                    <div class="uk-width-5-6">
+                        <input type="text" placeholder="Search for ideas" class="search-box">
+                    </div>
+                    <div class="uk-width-1-6">
+                        <button id="search-btn" class="uk-button uk-button-default search-btn">Search</button>
+                    </div>
+                    <div class="uk-width-3-6">
+                        <button id="seed" class="uk-button uk-button-default under-btn">Seed</button>
+                        <button id="sapling" class="uk-button uk-button-default under-btn">Sapling</button>
+                        <button id="tree" class="uk-button uk-button-default under-btn">Tree</button>
+                    </div>
+>>>>>>> 033bab0148edcbfbbc7179d595e177982f5df62f
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="results"></div>
 
-    <script src="http://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src= "./script/app.js"></script>
-    <script src= "./script/uikit.js"></script>
-    
+    <div class="new-seed"></div>
+
+    <div class="signing-up"></div>
+
+    <div class="signing-in"></div>
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="./script/app.js"></script>
+    <script src="./script/uikit.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit-icons.min.js"></script>
 </body>
+
 </html>

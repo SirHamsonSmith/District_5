@@ -1,4 +1,3 @@
-
 .wrapper {
     margin-top: 50px;
     display: flex;
@@ -8,6 +7,11 @@
 .logo {
     height: 350px;
     width: 600px;
+}
+
+.uk-card {
+    margin: 20px;
+    border: 1px solid rgb(233, 233, 233);
 }
 
 .wrapper-search {
@@ -28,24 +32,23 @@
 .search-btn {
     position: relative;
     height: 45px;
-    background-color: rgb(212, 212, 212)!important;
+    background-color: rgb(212, 212, 212) !important;
     float: right;
 }
 
 .search-buttons {
-    background-color: rgb(50, 128, 46)!important;
+    background-color: rgb(50, 128, 46) !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
 }
 
-.home-buttons {
-    
-}
+.home-buttons {}
 
 .under-btn {
     display: inline-flex;
     padding-top: 15px;
     justify-content: center;
+<<<<<<< HEAD
     margin-top: 15px!important;
     background-color: rgb(98, 165, 32)!important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -111,4 +114,83 @@
 #posted-by {
     margin-bottom: 0;
     margin-top: 12px;
+=======
+    margin-top: 15px !important;
+    background-color: rgb(58, 151, 55) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#reply-box {
+    background-color: whitesmoke;
+    border: none;
+    height: 30px;
+    padding: 1%;
+    overflow: hidden;
+    float: left;
+    padding: right 10px;
+
+}
+
+#input-btn {
+    float: right;
+    overflow: hidden;
+    padding-top: 5px;
+
+}
+
+.space {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#comments {
+    float: right;
+}
+
+#t-up {
+    cursor: pointer;
+}
+
+#t-down {
+    cursor: pointer;
+}
+
+/* NEW SEED BUTTON */
+/* Form Title  */
+.new-seed-title {
+    color: black;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.form {
+    position: absolute;
+    margin-top: 250px;
+    width: 800px;
+}
+
+#u-account{
+    margin-right:40px;
+}
+
+#sign-up{
+    color:rgb(17, 175, 6);
+}
+
+.signing-up {
+    margin: 0 auto;
+    width: 200px;
+    padding-top:50px;
+}
+
+.signing-in {
+    margin: 0 auto;
+    width: 200px;
+    padding-top:50px;
+}
+
+#sign-in-btn{
+    background-color:green;
+    float:right;
+>>>>>>> 033bab0148edcbfbbc7179d595e177982f5df62f
 }
