@@ -50,9 +50,9 @@ $('#seed').on('click', function () {
             </li>
         </ul>
         
-        <i id="t-up" class="fa fa-thumbs-up space" aria-hidden="true">(${voteCounter})</i>
-        <i id="t-down" class="fa fa-thumbs-down space" aria-hidden="true">(${voteCounter})</i><br>
         <a id="reply-link" class="uk-button uk-button-text uk-text-primary" stage="${seed.stage}">Reply</a>
+        <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${voteCounter})</i>
+        <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${voteCounter})</i>
         <a id="comments">Comments(${seedCounter})</a>
     </div>`)
                     }
@@ -306,9 +306,9 @@ $(document).on('click', '#t-down', function () {
 $('#new-seed').on('click', function () {
     $('.wrapper-search').css("display", "none")
     $('.wrapper').append(`
-    <form class="uk-position-center form">
+    <form id="form" class="uk-position-center form">
     <fieldset class="uk-fieldset">
-      <legend class="uk-legend new-seed-title">New Seed Idea</legend>
+      <legend id="form-title" class="uk-legend new-seed-title">New Seed Idea</legend>
       <div class="uk-margin">
         <input id="seed-subject" class="uk-input" type="text" placeholder="Seed Subject">
       </div>
@@ -441,6 +441,7 @@ $(document).on('click', '#sign-up-btn', function () {
         .then(r => console.log(r.status));
 
     $('.wrapper-body').css("display", "");
+    $('.signing-up').css("display", "none")
 })
 
 $(document).on('click', '#sign-in-btn', function () {

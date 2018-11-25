@@ -126,3 +126,23 @@
     background-color:green;
     float:right;
 }
+
+#form-title {
+    color: black;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+#form {
+    position: absolute;
+    margin-top: 250px;
+    width: 800px;
+}
+
+.thumbs {
+    color: black;
+}
+
+.thumbs-up {
+    margin-left: 30px;
+}
