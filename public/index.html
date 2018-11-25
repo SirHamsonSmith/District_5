@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/uikit.css">
-    <!-- <link rel="stylesheet" href="./css/NewSeed.css"> DANIEL: Added custom style sheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <title>Sprout (A website to share your ideas)</title>
 </head>
 
@@ -15,7 +16,7 @@
     <div class="header">
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav"> <!-- DANIEL: Removed Seed & Sapling | Replaced with New Seed-->
+                <ul class="uk-navbar-nav">
                     <li class="uk-active"><a id="new-seed" href="#">New Seed</a></li>
                 </ul>
             </div>
@@ -24,23 +25,23 @@
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">User Account</a></li>
+                    <li class="uk-active">
+                        <a id="u-account">User Account</a>
+                        <div id="sign-in-dropdown" uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li class="uk-active"><a id="sign-in">Sign In</a></li>
+                                <li class="uk-active"><a id="open-profile">Open profile</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a id="sign-up" href="#">Don't have an account? Sign Up</a></li>
+                                <li><a id="sign-out" href="#">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
-    <!-- <div class="body uk-container uk-container-center" >
-        
-        <img class="logo-size " src="./assets/sprout_logo_2.png" alt="">
-        <div class="search-bar" >
-            <input type="text" placeholder="Search seeds" class="search-box">
-        </div>
-        <div class="home-buttons" >
-            <button  class="uk-button uk-button-default search-buttons ">Seed</button>
-            <button  class="uk-button uk-button-default search-buttons">Sapling</button>
-            <button  class="uk-button uk-button-default search-buttons">Tree</button>
-        </div>
-    </div> -->
+
     <div class="wrapper-body">
         <div class="wrapper">
             <div class="uk-container uk-container-center">
@@ -67,13 +68,21 @@
             </div>
         </div>
     </div>
-    <div class="results">
-    </div>
+
+    <div class="results"></div>
+
     <div class="new-seed"></div>
+
+    <div class="signing-up"></div>
+
+    <div class="signing-in"></div>
+
+
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="./script/app.js"></script>
     <script src="./script/uikit.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.24/js/uikit-icons.min.js"></script>
 </body>
 
 </html>

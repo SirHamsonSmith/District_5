@@ -1,5 +1,12 @@
 $(document).ready(() => {
     $('.results').css("display", "none")
+    $('.signing-up').css("display", "none")
+    $('.signing-in').css("display", "none")
+    $('#sign-in').css("display", "")
+    $('#sign-up').css("display", "")
+    $('#sign-out').css("display", "none")
+    $('#open-profile').css("display", "none")
+
 })
 
 // ----------------------Main Button On Click Functions-------------------------
@@ -254,44 +261,44 @@ $(document).submit('#reply-form', function () {
         .catch(e => console.log(e))
 })
 
-$(document).on('click', '#comments', function() {
+$(document).on('click', '#comments', function () {
 
 })
 
-$(document).on('click','#t-up', function() {
+$(document).on('click', '#t-up', function () {
     topic = $(this).parent().siblings().attr('id');
     fetch('/votes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({
-            topic: topic,
-            upvote: true,
-            downvote:false,
-            user_id: "2"
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: topic,
+                upvote: true,
+                downvote: false,
+                user_id: "2"
+            })
         })
-    })
-    .then(r => console.log(r.status))
-    .catch(e => console.log(e))
+        .then(r => console.log(r.status))
+        .catch(e => console.log(e))
 })
 
-$(document).on('click', '#t-down', function(){
+$(document).on('click', '#t-down', function () {
     topic = $(this).parent().siblings().attr('id');
     fetch('/votes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({
-            topic: topic,
-            upvote: false,
-            downvote:true,
-            user_id: "2"
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: topic,
+                upvote: false,
+                downvote: true,
+                user_id: "2"
+            })
         })
-    })
-    .then(r => console.log(r.status))
-    .catch(e => console.log(e))
+        .then(r => console.log(r.status))
+        .catch(e => console.log(e))
 })
 
 // NEW SEED BUTTON FUNCTION
@@ -303,10 +310,10 @@ $('#new-seed').on('click', function () {
     <fieldset class="uk-fieldset">
       <legend class="uk-legend new-seed-title">New Seed Idea</legend>
       <div class="uk-margin">
-        <input class="uk-input" type="text" placeholder="Seed Subject">
+        <input id="seed-subject" class="uk-input" type="text" placeholder="Seed Subject">
       </div>
       <div class="uk-margin">
-        <textarea class="uk-textarea" rows="5" placeholder="Your Thoughts"></textarea>
+        <textarea id="your-thoughts" class="uk-textarea" rows="5" placeholder="Your Thoughts"></textarea>
       </div>
   
       <p uk-margin>
@@ -315,8 +322,147 @@ $('#new-seed').on('click', function () {
     </fieldset>
   </form>
     `)
-  })
-  
-  $(document).on('click', '#submit-btn', function() {
-  
-  })
+})
+
+$(document).on('click', '#submit-btn', function () {
+    var newTopic = $('#seed-subject').val();
+    var yourThoughts = $('#your-thoughts').val()
+
+    fetch('/ideas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: newTopic,
+                discussion: yourThoughts,
+                declaration: "",
+                stage: 'seed',
+                parent: '',
+                user_id: "2"
+            })
+        })
+        .then(r => console.log(r.status))
+        .catch(e => console.log(e))
+})
+
+// ------------------User Authentication-----------------
+$('#sign-in').on('click', function () {
+    $('.wrapper-body').css("display", "none");
+    $('.signing-in').css("display", "")
+    $('.signing-in').append(`
+    <h1 align="center">Sign In</h1>
+    <p align="center">The world is awaiting you!</p>
+    <hr>
+    <form>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+            <input id="email" class="uk-input" type="text" placeholder="Email Address">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input id="password" class="uk-input" type="password" placeholder="Password">
+        </div>
+    </div>
+
+</form>
+<hr>
+<button id="sign-in-btn" class="uk-button uk-button-default uk-button-primary uk-button-small">Sign in</button>
+    `)
+})
+
+$('#sign-up').on('click', function () {
+    $('.wrapper-body').css("display", "none");
+    $('.signing-up').css("display", "")
+    $('.signing-up').append(`
+    <h1 align="center">Sign Up</h1>
+    <p align="center">Spread your ideas</p>
+    <hr>
+    <form>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input id="first-name" class="uk-input" type="text" placeholder="First Name">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input id="last-name" class="uk-input" type="text" placeholder="Last Name">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+            <input id="email" class="uk-input" type="text" placeholder="Email Address">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input id="password" class="uk-input" type="password" placeholder="Password">
+        </div>
+    </div>
+
+</form>
+<hr>
+<button id="sign-up-btn" class="uk-button uk-button-default uk-button-primary uk-button-small">Sign Up</button>
+    `)
+})
+
+$(document).on('click', '#sign-up-btn', function () {
+    var fname = $('#first-name').val();
+    var lname = $('#last-name').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+    fetch('/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                firstName: fname,
+                lastName: lname,
+                userName: email,
+                password: password,
+                loggedIn: false
+            })
+        })
+        .then(r => console.log(r.status));
+
+    $('.wrapper-body').css("display", "");
+})
+
+$(document).on('click', '#sign-in-btn', function () {
+
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+    fetch(`/users/userName/${email}`)
+        .then(r => r.json())
+        .then(r => {
+            if (r === null) {
+                alert('email address does not exist');
+            } else if (r.password === password && r.userName === email) {
+                
+                $('.wrapper-body').css("display", "");
+                $('#sign-in').css("display", "none")
+                $('#sign-up').css("display", "none")
+                $('#sign-out').css("display", "")
+                $('#open-profile').css("display", "")
+                 $('.signing-in').css("display", "none")
+            } else {
+                alert("Username / Password combination not correct")
+            }
+        })
+})

@@ -28,8 +28,19 @@ module.exports = app => {
             .catch(e => console.log(e))
     })
 
+    app.get('/users/:route/:name', (req, res) => {
+        const name = req.params.name === "null" ? null : req.params.name;
+        db.users.findOne({
+                where: {
+                    [req.params.route]: name
+                }
+            })
+            .then(r => res.json(r))
+            .catch(e => console.log(e))
+    })
+
     app.post('/ideas', (req, res) => {
-            db.ideas.create(req.body)
+        db.ideas.create(req.body)
             .then(() => res.sendStatus(200))
             .catch(e => console.log(e))
     })
@@ -102,6 +113,12 @@ module.exports = app => {
                 where: {},
                 truncate: true
             })
+            .then(() => res.sendStatus(200))
+            .catch(e => console.log(e))
+    })
+
+    app.post('/register', (req, res) => {
+        db.users.create(req.body)
             .then(() => res.sendStatus(200))
             .catch(e => console.log(e))
     })

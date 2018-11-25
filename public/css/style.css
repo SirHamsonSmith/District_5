@@ -98,6 +98,31 @@
 
 .form {
     position: absolute;
-    margin-top: 80px;
+    margin-top: 250px;
     width: 800px;
+}
+
+#u-account{
+    margin-right:40px;
+}
+
+#sign-up{
+    color:rgb(17, 175, 6);
+}
+
+.signing-up {
+    margin: 0 auto;
+    width: 200px;
+    padding-top:50px;
+}
+
+.signing-in {
+    margin: 0 auto;
+    width: 200px;
+    padding-top:50px;
+}
+
+#sign-in-btn{
+    background-color:green;
+    float:right;
 }
