@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/uikit.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="first-post-container">
+        <div class="uk-card uk-card-default uk-width-2-3@m post-card">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-expand">
+                        <div class="uk-width-2-1 uk-flex-end avatar-img">
+                            <img class="uk-border-circle avatar-img uk-flex-end" width="40" height="40" src="images/avatar.jpg">
+                        </div>
+                        <div class="uk-width-1-2">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                        </div>
+                        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                            <div id="tally">
+                                <img class="vote-tally-icon" src="./assets/thumbs-up-icon.png" alt="">
+                                <h5 id="upvote-tally">0</h5>
+                                <img class="vote-tally-icon" src="./assets/thumbs-down-icon.png" alt="">
+                                <h5 id="downvote-tally">0</h5>
+                            </div>
+                            <div class="uk-grid-divider"uk-grid>
+                                <div class="uk-width-auto@m">
+                                        <p id="posted-by">Original Seed</p>
+                                </div>
+                                <div class=" uk-width-auto@m">
+                                    <p id="posted-by">Posted By: lorem ipsum</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae et iusto alias autem deleniti explicabo ducimus necessitatibus tempore, veniam eos perferendis nobis aspernatur voluptate dolor tempora debitis corrupti, ad est!
+                Molestias eius libero repudiandae necessitatibus nostrum incidunt a aperiam ratione? Quidem quam, reprehenderit nam ratione laboriosam id quaerat minima architecto vel! Illum tempora hic inventore non rem necessitatibus fuga voluptates.
+                Consequuntur ipsa nulla pariatur iste, laudantium commodi recusandae libero sunt aut, cupiditate optio facere! Quos inventore blanditiis, cupiditate reprehenderit at nobis accusamus? Vitae deserunt corporis illo aliquam nihil optio atque.
+                At corporis fuga nobis cupiditate facilis, velit laborum voluptates dolores nostrum consequatur architecto rerum quae tempora quisquam fugiat quas, voluptatibus modi nulla illum illo obcaecati. Ipsa esse vel nisi consequuntur.
+                Deserunt nesciunt quia architecto tempora quos quibusdam laboriosam reiciendis aliquid quae ducimus nihil debitis iste dolorem porro repellat harum nostrum magnam ipsa, quidem molestiae. Magni dolore repellat aut qui odio.</p>
+            </div>
+            <div class="uk-card-body uk-flex-center uk-text-center">
+                <button class="uk-button uk-button-default add-comment">Expand on this Seed</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src= "./script/app.js"></script>
+    <script src= "./script/uikit.js"></script>
+</body>
+</html>
