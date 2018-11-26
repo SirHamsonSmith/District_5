@@ -1,0 +1,142 @@
+[{
+    "topic": "Working in Uncommon Fields",
+    "discussion": "Location Independence",
+    "declaration": "",
+    "stage": "sapling",
+    "parent": "",
+    "user_id": 1,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  },
+  {
+    "topic": "Self Defense",
+    "discussion": "Martial Arts",
+    "declaration": "",
+    "stage": "sapling",
+    "parent": "",
+    "user_id": 2,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  },
+  {
+    "topic": "Recipes For Couples",
+    "discussion": "Without Children",
+    "declaration": "",
+    "stage": "sapling",
+    "parent": "",
+    "user_id": 3,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  },
+  {
+    "topic": "Male Guide",
+    "discussion": "Female Communication",
+    "declaration": "",
+    "stage": "sapling",
+    "parent": "",
+    "user_id": 4,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  },
+  {
+    "topic": "Using Technology In Small Business",
+    "discussion": "Google Docs, CRM, Credit Card Processing",
+    "declaration": "",
+    "stage": "sapling",
+    "parent": "",
+    "user_id": 5,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  },
+  {
+    "topic": "Self improvement",
+    "discussion": "Self-Hypnosis",
+    "declaration": "",
+    "stage": "seed",
+    "parent": "",
+    "user_id": 1,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "Health & Fitness",
+    "discussion": "For Busy People",
+    "declaration": "",
+    "stage": "seed",
+    "parent": "",
+    "user_id": 2,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "Language Learning",
+    "discussion": "Blogs",
+    "declaration": "",
+    "stage": "seed",
+    "parent": "",
+    "user_id": 3,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "How to Travel on a Budget",
+    "discussion": "Best hotel deals. Car rental. Trip advice.",
+    "declaration": "",
+    "stage": "seed",
+    "parent": "",
+    "user_id": 4,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "Personal Development",
+    "discussion": "Passions & Ambition Pursuing",
+    "declaration": "",
+    "stage": "seed",
+    "parent": "",
+    "user_id": 5,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "Bullying",
+    "discussion": "Cyber Bullying",
+    "declaration": "",
+    "stage": "tree",
+    "parent": "",
+    "user_id": 1,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "Behavioral Disorders",
+    "discussion": "Adults & Children",
+    "declaration": "",
+    "stage": "tree",
+    "parent": "",
+    "user_id": 2,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "Entrepreneurial Education",
+    "discussion": "For Young Children & Adults",
+    "declaration": "",
+    "stage": "tree",
+    "parent": "",
+    "user_id": 3,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "DIY Projects",
+    "discussion": "Homemade Items",
+    "declaration": "",
+    "stage": "tree",
+    "parent": "",
+    "user_id": 4,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }, {
+    "topic": "How to have a Strong Marriage",
+    "discussion": "Working Relationships",
+    "declaration": "",
+    "stage": "tree",
+    "parent": "",
+    "user_id": 5,
+    "createdAt": "2018-11-25 19:15:31",
+    "updatedAt": "2018-11-25 19:15:31"
+  }
+]
