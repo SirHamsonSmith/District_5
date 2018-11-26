@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/uikit.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a id="new-seed" href="#">New Seed</a></li>
+                </ul>
+            </div>
+            <div class="uk-navbar-center">
+                <a href="" class="uk-navbar-item uk-logo"><strong>Sprout</strong></a>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active">
+                        <a id="u-account">User Account</a>
+                        <div id="sign-in-dropdown" uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li class="uk-active"><a id="sign-in">Sign In</a></li>
+                                <li class="uk-active"><a id="open-profile">Open profile</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a id="sign-up" href="#">Don't have an account? Sign Up</a></li>
+                                <li><a id="sign-out" href="#">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <br>
+
+    <div class="uk-child-width-1-2@m uk-child-width-1-1@s uk-text-center" uk-grid="masonry: true">
+        <div class="uk-card-large uk-card-default uk-card-hover uk-width-1-3@m uk-width-1-1@s">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <img class="uk-border-circle" width="180" height="180" src="./assets/tin_man.jpg">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h4 class="uk-comment-title uk-margin-remove uk-text-center"><a class="uk-link-reset" href="#">
+                                <h3><strong>Jack Haley</strong>
+                            </a></h3>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <p>
+                    <h4>Occuption(s):</h4>Web Developer
+                </p>
+                <p>
+                    <h4>Skils:</h4>HTML,CSS, Javascript, Node.js, MySQL
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <div class="uk-child-width-2-3@m width-1-1 uk-text-center" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body uk-card-hover">
+                        <div class="uk-card-header">
+                            <i class="fas fa-envelope" style="padding-left: 30px;"><a href="#"> Send Message</a></i>
+                            <i class="fas fa-users" style="padding-left: 30px;"><a href="#"> Contacts</a></i>
+                            <i class="fas fa-user-slash" style="padding-left: 30px;"><a href="#"> Report User</a></i>
+                        </div>
+                        <div class="uk-card-body">
+                            <h4>Contact Information</h4>
+                            <ul class="uk-list">
+                                <li><strong>Phone:</strong> 1 (620) 626-0180</li>
+                                <li><strong>E-mail:</strong> jhaley@aol.com</li>
+                                <li><strong>Address:</strong> 519 N Kansas Ave, Liberal, KS 67901</li>
+                            </ul>
+                            <h4>Basic Information</h4>
+                            <ul class="uk-list">
+                                <li><strong>Birthday:</strong> June 6, 1979,</li>
+                                <li><strong>Gender:</strong> Male</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+        <div class="uk-card-large uk-card-default uk-width-1-3@m">
+            <div>
+                <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover">
+                    <h3 class="uk-card-title">Settings</h3>
+                    <ul class="uk-list uk-list">
+                        <li class="uk-active"><a href="#">Change Username</a></li>
+                        <li class="uk-active"><a href="#">Change Password</a></li>
+                        <li class="uk-active"><a href="#">Change Profile Image</a></li>
+                        <li class="uk-active"><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-card-large uk-card-default uk-card-hover uk-width-1-3@m">
+            <div>
+                <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover">
+                    <h3 class="uk-card-title">Recent Activites</h3>
+                    <ul class="uk-list uk-list">
+                        <li class="uk-active"><a href="#">Seeds</a></li>
+                        <li class="uk-active"><a href="#">Saplings</a></li>
+                        <li class="uk-active"><a href="#">Comments</a></li>
+                        <li class="uk-active"><a href="#">Direct Messages</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-card-large uk-card-default uk-width-1-3@m">
+            <div>
+                <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover">
+                    <h3 class="uk-card-title">Trending</h3>
+                    <ul class="uk-list uk-list">
+                        <li class="uk-active"><a href="#">Seeds</a></li>
+                        <li class="uk-active"><a href="#">Saplings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="./script/app.js"></script>
+    <script src="./script/uikit.js"></script>
+    <script src="uikit/dist/js/uikit-icons.min.js"></script>
+</body>
+
+</html>
