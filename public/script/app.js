@@ -255,7 +255,7 @@ $(document).on('click', '#reply-btn-comment', function () {
                 user_id: "4"
             })
         })
-    
+
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 });
@@ -291,7 +291,7 @@ $(document).on('click', '#comments', function () {
                                         }
                                     }
 
-                                    
+
                                 })
 
                             $(this).parent().append(`
@@ -331,17 +331,17 @@ $(document).on('click', '#comments', function () {
 $(document).on('click', '#t-up', function () {
     topic = $(this).parent().siblings().attr('id');
     fetch('/votes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({
-            topic: topic,
-            upvote: true,
-            downvote: false,
-            user_id: "2"
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: topic,
+                upvote: true,
+                downvote: false,
+                user_id: "2"
+            })
         })
-    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
@@ -349,17 +349,17 @@ $(document).on('click', '#t-up', function () {
 $(document).on('click', '#t-down', function () {
     topic = $(this).parent().siblings().attr('id');
     fetch('/votes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({
-            topic: topic,
-            upvote: false,
-            downvote: true,
-            user_id: "2"
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: topic,
+                upvote: false,
+                downvote: true,
+                user_id: "2"
+            })
         })
-    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
@@ -367,9 +367,9 @@ $(document).on('click', '#t-down', function () {
 // NEW SEED BUTTON FUNCTION
 if (isLoggedIn()) {
     $(document).on('click', '#new-seed', function () {
-        
-        $('.wrapper-search').css("display", "none")
-        $('.wrapper').append(`
+
+            $('.wrapper-search').css("display", "none")
+            $('.wrapper').append(`
     <form id="form" class="uk-position-center form">
     <fieldset class="uk-fieldset">
       <legend id="form-title" class="uk-legend new-seed-title">New Seed Idea</legend>
@@ -386,7 +386,7 @@ if (isLoggedIn()) {
     </fieldset>
   </form>
     `)
-    }
+        }
 
     )
 }
@@ -398,19 +398,19 @@ $(document).on('click', '#submit-btn', function () {
     var yourThoughts = $('#your-thoughts').val()
 
     fetch('/ideas', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({
-            topic: newTopic,
-            discussion: yourThoughts,
-            declaration: "",
-            stage: 'seed',
-            parent: '',
-            user_id: "2"
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: newTopic,
+                discussion: yourThoughts,
+                declaration: "",
+                stage: 'seed',
+                parent: '',
+                user_id: "2"
+            })
         })
-    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
@@ -510,30 +510,25 @@ $(document).on('click', '#sign-up-btn', function () {
             // console.log('return find');
             // console.log(r);
             // console.log(r.length);
-            if(r != null)
-            {
+            if (r != null) {
                 alert(email + ' already been registered ');
-            }
-            else
-            {
+            } else {
                 fetch('/users', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json; charset=utf-8'
-                    },
-                    body: JSON.stringify({
-                        firstName: fname,
-                        lastName: lname,
-                        userName: email,
-                        password: password,
-                        loggedIn: false
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json; charset=utf-8'
+                        },
+                        body: JSON.stringify({
+                            firstName: fname,
+                            lastName: lname,
+                            userName: email,
+                            password: password,
+                            loggedIn: false
+                        })
                     })
-                })
                     .then(res => console.log(res))
                     .then(r => {
-                        // console.log(r);
-                        // console.log(r.status);
-                        //alert('a');
+                       
                         console.log(email);
                         // Sig in after sign up
                         $('#sign-in').click();
@@ -543,10 +538,7 @@ $(document).on('click', '#sign-up-btn', function () {
                         $('#sign-in-btn').click();
 
                     });
-                    // .catch(err => {
-                    //     alert(email + ' already been registered ');
-                    // });
-
+                
                 $('.wrapper-body').css("display", "");
                 $('.signing-up').css("display", "none")
 
@@ -559,37 +551,6 @@ $(document).on('click', '#sign-up-btn', function () {
         }
     })
 
-    // $.ajax({
-    //     url: '/users',
-    //     method: 'POST',
-    //     contentType: "application/json; charset=utf-8",
-    //     data : JSON.stringify({
-    //         firstName: fname,
-    //         lastName: lname,
-    //         userName: email,
-    //         password: password,
-    //         loggedIn: false
-    //     }),
-    //     success : function (r) {
-    //         console.log(r);
-    //         console.log(r.status);
-    //         alert('a');
-    //         console.log(email);
-    //         // Sig in after sign up
-    //         $('#sign-in').click();
-    //         $(".signing-in").hide();
-    //         $('#email').val(email);
-    //         $('#password').val(password);
-    //         $('#sign-in-btn').click();
-    //     },
-    //     error : function (error) {
-    //         alert(email + ' already been registered ');
-    //     }
-    // });
-
-    
-
-    
 })
 
 
@@ -607,6 +568,7 @@ function isLoggedIn() {
     return typeof window.sessionStorage["UserID"] != 'undefined' && window.sessionStorage["UserID"] != null;
 
 }
+
 function displayUserMenu() {
     if (isLoggedIn()) {
         $('.wrapper-body').css("display", "");
@@ -621,7 +583,7 @@ $(document).on('click', '#sign-in-btn', function () {
 
     var email = $('#email').val();
     var password = $('#password').val();
-    
+
     fetch(`/users/userName/${email}`)
         .then(r => r.json())
         .then(r => {
@@ -631,7 +593,7 @@ $(document).on('click', '#sign-in-btn', function () {
 
                 setSession(r);
                 displayUserMenu();
-                
+
 
             } else {
                 alert("Username / Password combination not correct")
@@ -640,20 +602,19 @@ $(document).on('click', '#sign-in-btn', function () {
             location.reload()
             // DisabledLinksAfterSignOut();
         })
-        
-    
+
+
 })
 //The reload() function takes an optional parameter that can be set to true to force a reload from the server rather than the cache. The parameter defaults to false, so by default the page may reload from the browser's cache.
 $('#sign-out').on('click', () => {
     deleteSession();
     //HideUserMenu();
     location.reload();
-    
+
 })
 
 
-function DisabledLinksAfterSignOut()
-{
+function DisabledLinksAfterSignOut() {
     $("#new-seed").css('disabled', 'disabled');
 }
 
@@ -671,3 +632,7 @@ function HideUserMenu() {
         $('.signing-in').css("display", "")
     }
 }
+
+$('#open-profile').on('click', function () {
+
+})
