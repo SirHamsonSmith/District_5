@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div class="uk-navbar-center">
-                <a href="" class="uk-navbar-item uk-logo"><strong>SPROUT</strong></a>
+                <a href="" class="uk-navbar-item uk-logo" uk-toggle="target: #offcanvas-reveal"><strong>SPROUT</strong></a>
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
@@ -82,42 +82,36 @@
     <div class="signing-in"></div>
 
     <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
-            <div class="uk-offcanvas-bar">
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <div class="user-login">
-                    <a href=""><img id="width-img3" src="./pic/girl.jpg" alt=""></a>
-                    <br>
-                    <a id="uname" class="uinfo">Jane Doe</a>
-                    <br>
-                    <a id="sign-out" class="uinfo">Sign Out</a>
-                </div>
-                <div class="left-column-toggle">
-                    <h3>Administration Panel</h3>
-                    <hr>
-                    <a id="dashboard">Dashboard</a>
-                    <br>
-                    <a id="installation">Installation</a>
-                    <br>
-                    <a id="integration">Integration</a>
-                    <br>
-                    <a href="">Configuration</a>
-                    <br>
-                    <br>
-                    <h3>Settings</h3>
-                    <hr>
-                    <a href="">Members</a>
-                    <br>
-                    <a href="">Company</a>
-                    <br>
-                    <a href="">Branding</a>
-                    <br>
-                    <a href="">Notofications</a>
-                    <br>
-                    <a href="">Subscriptions</a>
-                </div>
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <div class="user-login">
+                <a href=""><img id="width-img3" src="./pics/girl.jpg" alt=""></a>
+                <br>
+                <ul>
+                    <li class="uk-navbar-header">Profile</li>
+                    <li class="uk-active">Biography</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="left-column-toggle">
+                <h3>Settings</h3>
+                <hr>
+                <a id="dashboard">Change Password</a>
+                <br>
+                <a id="installation">Change Username</a>
+                <br>
+                <a id="integration">Change Profile Image</a>
+                <br>
+                <br>
+                <h3>Recent Activities</h3>
+                <hr>
+                <a href="">Direct Messages</a>
+                <br>
+                <a href="">Comments</a>
+                <br>
             </div>
         </div>
-
+    </div>
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="./script/app.js"></script>

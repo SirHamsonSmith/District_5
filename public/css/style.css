@@ -254,3 +254,56 @@
 #reply-reply{
     padding:20px 60px 0 60px;
 }
+
+.user-login {
+
+    width: 100%;
+    height: 200px;
+    background-color:whitesmoke;
+    background-image: url("../pics/background3.jpeg");
+}
+
+#width-img3 {
+    width: 70px;
+    border-radius: 50%;
+    margin:20px;
+}
+
+#width-img2 {
+    width: 10%;
+    margin-left: 60%;
+}
+
+.uinfo{
+    margin-left:30px;
+    color: black;
+}
+
+.left-column-toggle {
+    padding: 40px;
+}
+
+#nav-search-input {
+    height: 30px;
+}
+
+#mynav {
+    background-color: rgb(161, 223, 223);
+    margin: 0px;
+}
+
+.admin-container {
+    padding: 10px;
+}
+
+#logo {
+    margin: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.admin-home-grid {
+    background-color: rgb(240, 240, 240);
+    min-height: 550px;
+    overflow: auto;
+}
