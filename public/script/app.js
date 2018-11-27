@@ -280,6 +280,19 @@ $(document).on('click', '#comments', function () {
                             var uname = r2.userName;
                             console.log(uname)
 
+                            fetch(`/votes/${topic}`)
+                                .then(r2 => r2.json())
+                                .then(r2 => {
+                                    for (const key in r2) {
+                                        if (r2.hasOwnProperty(key)) {
+                                            const votes = r2[key];
+                                            console.log(votes)
+                                        }
+                                    }
+
+                                    
+                                })
+
                             $(this).parent().append(`
                            <hr>
                 <div>
@@ -295,6 +308,15 @@ $(document).on('click', '#comments', function () {
                             </td>
                         </tr>
                     </table>
+                    <div id="reply-reply">
+                        <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${0})</i>
+                        <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${0})</i>
+                        <a id="comments">Comments(${0})</a>
+                        <div>
+                            <textarea id="text-reply" placeholder="Reply to Discussion"></textarea>
+                            <button id="reply-btn-comment" class="uk-button uk-button-deafault uk-button-primary">Reply</button>
+                        </div>
+                    </div>
                 </div>
 
                            `)

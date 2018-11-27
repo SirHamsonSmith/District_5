@@ -43,30 +43,34 @@
     </div>
 
     <div class="wrapper-body">
-        <div class="wrapper">
-            <div class="uk-container uk-container-center">
-                <div class="logo" uk-grid>
-                    <img class="logo-size uk-width-1-1@l" src="./assets/logo_transparent-edit.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="wrapper-search">
-            <div class="uk-container uk-container-center">
-                <div class="search uk-flex-center uk-text-center" uk-grid>
-                    <div class="uk-width-5-6">
-                        <input type="text" placeholder="Search for ideas" class="search-box">
-                    </div>
-                    <div class="uk-width-1-6">
-                        <button id="search-btn" class="uk-button uk-button-default search-btn">Search</button>
-                    </div>
-                    <div class="uk-width-3-6">
-                        <button id="seed" class="uk-button uk-button-default under-btn">Seed</button>
-                        <button id="sapling" class="uk-button uk-button-default under-btn">Sapling</button>
-                        <button id="tree" class="uk-button uk-button-default under-btn">Tree</button>
+        <ul class="uk-child-width-1-1@s uk-child-width-1-1@l" uk-grid>
+            <li>
+                <div class="wrapper">
+                    <div class="uk-container uk-container-center">
+                        <div class="logo" uk-grid>
+                            <img class="logo-size uk-width-1-1@l" src="./assets/logo_transparent-edit.png" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="wrapper-search">
+                    <div class="uk-container uk-container-center">
+                        <div class="search uk-flex-center uk-text-center" uk-grid>
+                            <div class="uk-width-5-6">
+                                <input type="text" placeholder="Search for ideas" class="search-box">
+                            </div>
+                            <div class="uk-width-1-6">
+                                <button id="search-btn" class="uk-button uk-button-default search-btn">Search</button>
+                            </div>
+                            <div class="uk-width-3-6">
+                                <button id="seed" class="uk-button uk-button-default under-btn">Seed</button>
+                                <button id="sapling" class="uk-button uk-button-default under-btn">Sapling</button>
+                                <button id="tree" class="uk-button uk-button-default under-btn">Tree</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <div class="results"></div>
@@ -77,6 +81,42 @@
 
     <div class="signing-in"></div>
 
+    <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="user-login">
+                    <a href=""><img id="width-img3" src="./pic/girl.jpg" alt=""></a>
+                    <br>
+                    <a id="uname" class="uinfo">Jane Doe</a>
+                    <br>
+                    <a id="sign-out" class="uinfo">Sign Out</a>
+                </div>
+                <div class="left-column-toggle">
+                    <h3>Administration Panel</h3>
+                    <hr>
+                    <a id="dashboard">Dashboard</a>
+                    <br>
+                    <a id="installation">Installation</a>
+                    <br>
+                    <a id="integration">Integration</a>
+                    <br>
+                    <a href="">Configuration</a>
+                    <br>
+                    <br>
+                    <h3>Settings</h3>
+                    <hr>
+                    <a href="">Members</a>
+                    <br>
+                    <a href="">Company</a>
+                    <br>
+                    <a href="">Branding</a>
+                    <br>
+                    <a href="">Notofications</a>
+                    <br>
+                    <a href="">Subscriptions</a>
+                </div>
+            </div>
+        </div>
 
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>

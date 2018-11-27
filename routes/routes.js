@@ -22,14 +22,11 @@ module.exports = app => {
             .catch(e => console.log(e))
     })
 
-    // app.get('/ideas/:keyword', (req, res) => {
-    //     const kword = req.params.keyword === "null" ? null : req.params.keyword;
-    //     db.ideas.findAll({ where: {
-    //         $like: kword
-    //     }})
-    //         .then(r => res.json(r))
-    //         .catch(e => console.log(e))
-    // })
+    app.get('/votes/:topic', (req, res) => {
+        db.votes.findAll({})
+            .then(r => res.json(r))
+            .catch(e => console.log(e))
+    })
 
     app.get('/users', (req, res) => {
         db.users.findAll({})
