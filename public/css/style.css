@@ -48,9 +48,74 @@
     display: inline-flex;
     padding-top: 15px;
     justify-content: center;
-    margin-top: 15px !important;
-    background-color: rgb(58, 151, 55) !important;
+
+    margin-top: 15px!important;
+    background-color: rgb(98, 165, 32)!important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* Reply and Seed Create Card Styling */
+
+.avatar-img {
+    text-align: right;
+}
+
+.first-post-container {
+    background-color:rgb(218,224,230);
+}
+
+.reply-btn {
+    background-color: rgba(0, 0, 0, 0.0);
+    box-shadow: none;
+    border: none;
+    transition: 0.3s;
+}
+
+.reply-btn:hover {
+    font-size: 90%;
+}
+
+.vote-icon {
+    margin: 2px;
+    height: 14px;
+    width: 14px;
+}
+
+.vote-tally-icon {
+    margin-top: 11px;
+    height: 14px;
+    width: 14px;
+}
+
+#tally {
+    display: inline-flex;
+    text-align: center;
+}
+
+#upvote-tally{
+    margin: 0;
+    padding-bottom: 5px;
+    padding: 5px;
+    vertical-align: baseline;   
+}
+
+#downvote-tally{
+    margin: 0;
+    padding-bottom: 5px;
+    padding: 5px;
+    vertical-align: baseline;
+}
+
+.post-card {
+    border: 1px rgb(158, 158, 158) solid;
+}
+
+#posted-by {
+    margin-bottom: 0;
+    margin-top: 12px;
+    margin-top: 15px !important;
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.15); */
 }
 
 #reply-box {
@@ -72,8 +137,8 @@
 }
 
 .space {
-    margin-left: 10px;
-    margin-right: 10px;
+
+    margin-right: 15px;
 }
 
 #comments {
@@ -102,29 +167,29 @@
     width: 800px;
 }
 
-#u-account{
-    margin-right:40px;
+#u-account {
+    margin-right: 40px;
 }
 
-#sign-up{
-    color:rgb(17, 175, 6);
+#sign-up {
+    color: rgb(17, 175, 6);
 }
 
 .signing-up {
     margin: 0 auto;
     width: 200px;
-    padding-top:50px;
+    padding-top: 50px;
 }
 
 .signing-in {
     margin: 0 auto;
     width: 200px;
-    padding-top:50px;
+    padding-top: 50px;
 }
 
-#sign-in-btn{
-    background-color:green;
-    float:right;
+#sign-in-btn {
+    background-color: green;
+    float: right;
 }
 
 #form-title {
@@ -139,10 +204,106 @@
     width: 800px;
 }
 
-.thumbs {
+
+#sign-in-btn{
+    background-color:green;
+    float:right;
+}
+
+.thumbs{
     color: black;
 }
 
 .thumbs-up {
-    margin-left: 30px;
+    /* margin-left: 30px; */
+}
+
+#text-reply {
+    margin-top: 15px;
+    width: 80%;
+    background-color: whitesmoke;
+    border: none;
+}
+
+#reply-btn-comment {
+    margin-top: 13px;
+    float: right;
+}
+
+#reply-image{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-right:10px;
+}
+
+#reply-image {border-radius: 50%;}
+
+#u-header{
+    margin-top:10px;
+    float:left;
+
+}
+
+#reply-reply{
+    padding:20px 60px 0 60px;
+}
+
+.user-login {
+
+    width: 100%;
+    height: 200px;
+    background-color:whitesmoke;
+    background-image: url("../pics/background3.jpeg");
+}
+
+#width-img3 {
+    width: 70px;
+    border-radius: 50%;
+    margin:20px;
+}
+
+#width-img2 {
+    width: 10%;
+    margin-left: 60%;
+}
+
+.uinfo{
+    margin-left:30px;
+    color: black;
+}
+
+.left-column-toggle {
+    padding: 40px;
+}
+
+#nav-search-input {
+    height: 30px;
+}
+
+#mynav {
+    background-color: rgb(161, 223, 223);
+    margin: 0px;
+}
+
+.admin-container {
+    padding: 10px;
+}
+
+#logo {
+    margin: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.admin-home-grid {
+    background-color: rgb(240, 240, 240);
+    min-height: 550px;
+    overflow: auto;
 }

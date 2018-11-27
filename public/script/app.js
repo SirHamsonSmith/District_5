@@ -50,10 +50,14 @@ $('#seed').on('click', function () {
             </li>
         </ul>
         
-        <a id="reply-link" class="uk-button uk-button-text uk-text-primary" stage="${seed.stage}">Reply</a>
+        
         <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${voteCounter})</i>
         <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${voteCounter})</i>
         <a id="comments">Comments(${seedCounter})</a>
+        <div>
+            <textarea id="text-reply" placeholder="Reply to Discussion"></textarea>
+            <button id="reply-btn-comment" class="uk-button uk-button-deafault uk-button-primary" stage="${seed.stage}">Reply</button>
+        </div>
     </div>`)
                     }
 
@@ -99,10 +103,13 @@ $('#sapling').on('click', function () {
             </div>
             </li>
         </ul>
-        <i id="t-up" class="fa fa-thumbs-up space" aria-hidden="true">(${voteCounter})</i>
-        <i id="t-down" class="fa fa-thumbs-down space" aria-hidden="true">(${voteCounter})</i><br>
-        <a id="reply-link" class="uk-button uk-button-text uk-text-primary" stage="${sapling.stage}">Reply</a>
+        <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${voteCounter})</i>
+        <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${voteCounter})</i>
         <a id="comments">Comments(${saplingCounter})</a>
+        <div>
+            <textarea id="text-reply" placeholder="Reply to Discussion"></textarea>
+            <button id="reply-btn-comment" class="uk-button uk-button-deafault uk-button-primary" stage="${sapling.stage}">Reply</button>
+        </div>
     </div>`)
                     }
 
@@ -148,10 +155,13 @@ $('#tree').on('click', function () {
             </div>
             </li>
         </ul>
-        <i id="t-up" class="fa fa-thumbs-up space" aria-hidden="true">(${voteCounter})</i>
-        <i id="t-down" class="fa fa-thumbs-down space" aria-hidden="true">(${voteCounter})</i><br>
-        <a id="reply-link" class="uk-button uk-button-text uk-text-primary" stage="${tree.stage}">Reply</a>
+        <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${voteCounter})</i>
+        <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${voteCounter})</i>
         <a id="comments">Comments(${treeCounter})</a>
+        <div>
+            <textarea id="text-reply" placeholder="Reply to Discussion"></textarea>
+            <button id="reply-btn-comment" class="uk-button uk-button-deafault uk-button-primary" stage="${tree.stage}">Reply</button>
+        </div>
    </div>`)
                     }
 
@@ -164,14 +174,14 @@ $('#tree').on('click', function () {
 $('#search-btn').on('click', function () {
     $('.wrapper-body').css("display", "none");
     $('.results').css("display", "")
-
-    fetch('/ideas')
+    var keyword = $('search-box').val()
+    fetch(`/ideas`)
         .then(r => r.json())
         .then(r => {
             for (const key in r) {
                 if (r.hasOwnProperty(key)) {
                     const ideas = r[key];
-                    var ideasCounter = 0;
+                    var ideaCounter = 0;
                     var voteCounter = 0;
                     if (ideas.stage === "seed" && ideas.parent === true) {
                         ideasCounter += 1;
@@ -198,10 +208,13 @@ $('#search-btn').on('click', function () {
             </div>
             </li>
         </ul>
-        <i id="t-up" class="fa fa-thumbs-up space" aria-hidden="true">(${voteCounter})</i>
-        <i id="t-down" class="fa fa-thumbs-down space" aria-hidden="true">(${voteCounter})</i><br>
-        <a id="reply-link" class="uk-button uk-button-text uk-text-primary" stage="${ideas.stage}">Reply</a>
-        <a id="comments">Comments(${ideasCounter})</a>
+        <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${voteCounter})</i>
+        <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${voteCounter})</i>
+        <a id="comments">Comments(${ideaCounter})</a>
+        <div>
+            <textarea id="text-reply" placeholder="Reply to Discussion"></textarea>
+            <button id="reply-btn-comment" class="uk-button uk-button-deafault uk-button-primary" stage="${ideas.stage}">Reply</button>
+        </div>
    </div>`)
 
                     }
@@ -214,54 +227,104 @@ var topic = "";
 var parent = "";
 var stage = "";
 var discussion = "";
-
-$(document).on('click', '#reply-link', function () {
-    topic = $(this).parent().siblings().attr('id');
-    parent = $(this).parent().siblings().attr('id');
-    stage = $(this).attr('stage');
-
-    $(this).parent().parent().append(`<div class="uk-card uk-card-small uk-card-default uk-width-1-2@m">
-            <div class="uk-card-header">
-                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                    <div class="uk-width-auto">
-                        <img class="uk-border-circle" width="40" height="40" src="./pics/girl.jpg">
-                    </div>
-                    <form id="reply-form" class="uk-width-expand">
-                        <div>
-                            <input id="reply-box" type="text" placeholder="What's your idea?"/>
-                        </div>
-                        <input id="input-btn" type="submit" value="post" class="uk-button uk-button-small uk-button-primary"/>
-                    </form>
-                </div>
-            </div>`)
-})
-
+var text = "";
 var counter = 0;
-$(document).submit('#reply-form', function () {
-    event.preventDefault();
+
+$(document).on('click', '#reply-btn-comment', function () {
+    topic = $(this).parent().parent().siblings().attr('id');
+    parent = $(this).parent().parent().siblings().attr('id');
+    stage = $(this).attr('stage');
+    discussion = $('#text-reply').val()
+
+    // console.log(`topic is ${topic} parent is ${parent} stage is ${stage} text from textbox is ${discussion}`)
+
     counter += 1;
     topic = topic + "-" + counter
-    discussion = $('#reply-box').val();
 
     fetch('/ideas', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({
-            topic: topic,
-            discussion: discussion,
-            declaration: "",
-            stage: stage,
-            parent: parent,
-            user_id: "2"
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                topic: topic,
+                discussion: discussion,
+                declaration: "",
+                stage: stage,
+                parent: parent,
+                user_id: "4"
+            })
         })
-    })
+    
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
-})
+});
+
 
 $(document).on('click', '#comments', function () {
+    topic = $(this).parent().siblings().attr('id');
+
+    fetch(`/ideas/parent/${topic}`)
+        .then(r => r.json())
+        .then(r => {
+
+            for (const key in r) {
+                if (r.hasOwnProperty(key)) {
+                    const reply = r[key];
+                    var disc = reply.discussion;
+                    var userId = reply.user_id;
+
+                    fetch(`/users/id/${userId}`)
+                        .then(r2 => r2.json())
+                        .then(r2 => {
+                            console.log(r2)
+                            var uname = r2.userName;
+                            console.log(uname)
+
+                            fetch(`/votes/${topic}`)
+                                .then(r2 => r2.json())
+                                .then(r2 => {
+                                    for (const key in r2) {
+                                        if (r2.hasOwnProperty(key)) {
+                                            const votes = r2[key];
+                                            console.log(votes)
+                                        }
+                                    }
+
+                                    
+                                })
+
+                            $(this).parent().append(`
+                           <hr>
+                <div>
+                    <table>
+                        <tr>
+                            <th><button id="reply-image"></button></th>
+                            <th id="u-header">${uname}</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p>${disc}</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="reply-reply">
+                        <i id="t-up" class="fa fa-thumbs-up space thumbs thumbs-up" aria-hidden="true">(${0})</i>
+                        <i id="t-down" class="fa fa-thumbs-down space thumbs" aria-hidden="true">(${0})</i>
+                        <a id="comments">Comments(${0})</a>
+                        <div>
+                            <textarea id="text-reply" placeholder="Reply to Discussion"></textarea>
+                            <button id="reply-btn-comment" class="uk-button uk-button-deafault uk-button-primary">Reply</button>
+                        </div>
+                    </div>
+                </div>
+
+                           `)
+                        })
+                }
+            }
+        })
 
 })
 

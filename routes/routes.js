@@ -22,6 +22,12 @@ module.exports = app => {
             .catch(e => console.log(e))
     })
 
+    app.get('/votes/:topic', (req, res) => {
+        db.votes.findAll({})
+            .then(r => res.json(r))
+            .catch(e => console.log(e))
+    })
+
     app.get('/users', (req, res) => {
         console.log('From All');
         console.log(req);
