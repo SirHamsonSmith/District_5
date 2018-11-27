@@ -6,7 +6,7 @@ $(document).ready(() => {
     $('#sign-up').css("display", "")
     $('#sign-out').css("display", "none")
     $('#open-profile').css("display", "none")
-
+    displayUserMenu()
 })
 
 // ----------------------Main Button On Click Functions-------------------------
@@ -244,19 +244,19 @@ $(document).submit('#reply-form', function () {
     discussion = $('#reply-box').val();
 
     fetch('/ideas', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify({
-                topic: topic,
-                discussion: discussion,
-                declaration: "",
-                stage: stage,
-                parent: parent,
-                user_id: "2"
-            })
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify({
+            topic: topic,
+            discussion: discussion,
+            declaration: "",
+            stage: stage,
+            parent: parent,
+            user_id: "2"
         })
+    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
@@ -268,17 +268,17 @@ $(document).on('click', '#comments', function () {
 $(document).on('click', '#t-up', function () {
     topic = $(this).parent().siblings().attr('id');
     fetch('/votes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify({
-                topic: topic,
-                upvote: true,
-                downvote: false,
-                user_id: "2"
-            })
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify({
+            topic: topic,
+            upvote: true,
+            downvote: false,
+            user_id: "2"
         })
+    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
@@ -286,26 +286,27 @@ $(document).on('click', '#t-up', function () {
 $(document).on('click', '#t-down', function () {
     topic = $(this).parent().siblings().attr('id');
     fetch('/votes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify({
-                topic: topic,
-                upvote: false,
-                downvote: true,
-                user_id: "2"
-            })
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify({
+            topic: topic,
+            upvote: false,
+            downvote: true,
+            user_id: "2"
         })
+    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
 
 // NEW SEED BUTTON FUNCTION
-
-$('#new-seed').on('click', function () {
-    $('.wrapper-search').css("display", "none")
-    $('.wrapper').append(`
+if (isLoggedIn()) {
+    $(document).on('click', '#new-seed', function () {
+        
+        $('.wrapper-search').css("display", "none")
+        $('.wrapper').append(`
     <form id="form" class="uk-position-center form">
     <fieldset class="uk-fieldset">
       <legend id="form-title" class="uk-legend new-seed-title">New Seed Idea</legend>
@@ -322,26 +323,31 @@ $('#new-seed').on('click', function () {
     </fieldset>
   </form>
     `)
-})
+    }
+
+    )
+}
+
+
 
 $(document).on('click', '#submit-btn', function () {
     var newTopic = $('#seed-subject').val();
     var yourThoughts = $('#your-thoughts').val()
 
     fetch('/ideas', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify({
-                topic: newTopic,
-                discussion: yourThoughts,
-                declaration: "",
-                stage: 'seed',
-                parent: '',
-                user_id: "2"
-            })
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify({
+            topic: newTopic,
+            discussion: yourThoughts,
+            declaration: "",
+            stage: 'seed',
+            parent: '',
+            user_id: "2"
         })
+    })
         .then(r => console.log(r.status))
         .catch(e => console.log(e))
 })
@@ -349,6 +355,8 @@ $(document).on('click', '#submit-btn', function () {
 // ------------------User Authentication-----------------
 $('#sign-in').on('click', function () {
     $('.wrapper-body').css("display", "none");
+    $('.signing-in').html('');
+    $('.signing-up').hide();
     $('.signing-in').css("display", "")
     $('.signing-in').append(`
     <h1 align="center">Sign In</h1>
@@ -378,6 +386,9 @@ $('#sign-in').on('click', function () {
 
 $('#sign-up').on('click', function () {
     $('.wrapper-body').css("display", "none");
+    // Empty the div content before adding any new content
+    $('.signing-up').html('');
+    $('.signing-in').hide();
     $('.signing-up').css("display", "")
     $('.signing-up').append(`
     <h1 align="center">Sign Up</h1>
@@ -425,45 +436,175 @@ $(document).on('click', '#sign-up-btn', function () {
     var email = $('#email').val();
     var password = $('#password').val();
 
-    fetch('/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify({
-                firstName: fname,
-                lastName: lname,
-                userName: email,
-                password: password,
-                loggedIn: false
-            })
-        })
-        .then(r => console.log(r.status));
 
-    $('.wrapper-body').css("display", "");
-    $('.signing-up').css("display", "none")
+    $.ajax({
+        // url:'/users?userName'+email,
+        url: '/users/' + email,
+        method: 'GET',
+        // data: JSON.stringify({ userName: email }),
+        contentType: "application/json; charset=utf-8",
+        success: function (r) {
+            // console.log('return find');
+            // console.log(r);
+            // console.log(r.length);
+            if(r != null)
+            {
+                alert(email + ' already been registered ');
+            }
+            else
+            {
+                fetch('/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    },
+                    body: JSON.stringify({
+                        firstName: fname,
+                        lastName: lname,
+                        userName: email,
+                        password: password,
+                        loggedIn: false
+                    })
+                })
+                    .then(res => console.log(res))
+                    .then(r => {
+                        // console.log(r);
+                        // console.log(r.status);
+                        //alert('a');
+                        console.log(email);
+                        // Sig in after sign up
+                        $('#sign-in').click();
+                        $(".signing-in").hide();
+                        $('#email').val(email);
+                        $('#password').val(password);
+                        $('#sign-in-btn').click();
+
+                    });
+                    // .catch(err => {
+                    //     alert(email + ' already been registered ');
+                    // });
+
+                $('.wrapper-body').css("display", "");
+                $('.signing-up').css("display", "none")
+
+            }
+        },
+        error: function (error) {
+            console.log('error find');
+            console.log(error);
+            alert(email + ' already been registered ');
+        }
+    })
+
+    // $.ajax({
+    //     url: '/users',
+    //     method: 'POST',
+    //     contentType: "application/json; charset=utf-8",
+    //     data : JSON.stringify({
+    //         firstName: fname,
+    //         lastName: lname,
+    //         userName: email,
+    //         password: password,
+    //         loggedIn: false
+    //     }),
+    //     success : function (r) {
+    //         console.log(r);
+    //         console.log(r.status);
+    //         alert('a');
+    //         console.log(email);
+    //         // Sig in after sign up
+    //         $('#sign-in').click();
+    //         $(".signing-in").hide();
+    //         $('#email').val(email);
+    //         $('#password').val(password);
+    //         $('#sign-in-btn').click();
+    //     },
+    //     error : function (error) {
+    //         alert(email + ' already been registered ');
+    //     }
+    // });
+
+    
+
+    
 })
 
+
+function deleteSession() {
+    delete window.sessionStorage["UserID"];
+    delete window.sessionStorage["UserFullName"];
+}
+
+function setSession(r) {
+    window.sessionStorage["UserID"] = r.id;
+    window.sessionStorage["UserFullName"] = r.firstName + ' ' + r.lastName;
+}
+
+function isLoggedIn() {
+    return typeof window.sessionStorage["UserID"] != 'undefined' && window.sessionStorage["UserID"] != null;
+
+}
+function displayUserMenu() {
+    if (isLoggedIn()) {
+        $('.wrapper-body').css("display", "");
+        $('#sign-in').css("display", "none")
+        $('#sign-up').css("display", "none")
+        $('#sign-out').css("display", "")
+        $('#open-profile').css("display", "")
+        $('.signing-in').css("display", "none")
+    }
+}
 $(document).on('click', '#sign-in-btn', function () {
 
     var email = $('#email').val();
     var password = $('#password').val();
-
+    
     fetch(`/users/userName/${email}`)
         .then(r => r.json())
         .then(r => {
             if (r === null) {
                 alert('email address does not exist');
             } else if (r.password === password && r.userName === email) {
+
+                setSession(r);
+                displayUserMenu();
                 
-                $('.wrapper-body').css("display", "");
-                $('#sign-in').css("display", "none")
-                $('#sign-up').css("display", "none")
-                $('#sign-out').css("display", "")
-                $('#open-profile').css("display", "")
-                 $('.signing-in').css("display", "none")
+
             } else {
                 alert("Username / Password combination not correct")
             }
+            //HideUserMenu();
+            location.reload()
+            // DisabledLinksAfterSignOut();
         })
+        
+    
 })
+//The reload() function takes an optional parameter that can be set to true to force a reload from the server rather than the cache. The parameter defaults to false, so by default the page may reload from the browser's cache.
+$('#sign-out').on('click', () => {
+    deleteSession();
+    //HideUserMenu();
+    location.reload();
+    
+})
+
+
+function DisabledLinksAfterSignOut()
+{
+    $("#new-seed").css('disabled', 'disabled');
+}
+
+function DisabledLinksAfterSignOut() {
+    $("#new-seed").css('disabled', '');
+}
+
+function HideUserMenu() {
+    if (!isLoggedIn()) {
+        $('.wrapper-body').css("display", "none");
+        $('#sign-in').css("display", "")
+        $('#sign-up').css("display", "")
+        $('#sign-out').css("display", "none")
+        $('#open-profile').css("display", "none")
+        $('.signing-in').css("display", "")
+    }
+}

@@ -23,10 +23,24 @@ module.exports = app => {
     })
 
     app.get('/users', (req, res) => {
+        console.log('From All');
+        console.log(req);
         db.users.findAll({})
             .then(r => res.json(r))
             .catch(e => console.log(e))
     })
+    // app.get('/users/:userName', (req, res) => {
+    //     console.log('Get here');
+    //     console.log(req);
+    //     const name = req.params.name === "null" ? null : req.params.name;
+    //     db.users.findOne({
+    //         where:{
+    //             [req.params.route]: userName
+    //     }
+    // })
+    //     .then(r => res.json(r))
+    //     .catch(e => console.log(e))
+    // })
 
     app.get('/users/:route/:name', (req, res) => {
         const name = req.params.name === "null" ? null : req.params.name;
@@ -47,6 +61,14 @@ module.exports = app => {
     app.post('/users', (req, res) => {
         db.users.create(req.body)
             .then(() => res.sendStatus(200))
+            .catch(e => console.log(e))
+    })
+
+    app.get('/users/:userName/', (req, res) => {
+        console.log("find one");
+        console.log(req.params.userName);
+        db.users.findOne({ where: { userName: req.params.userName } })
+            .then(r => res.json(r))
             .catch(e => console.log(e))
     })
 
