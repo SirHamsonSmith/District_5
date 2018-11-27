@@ -48,9 +48,74 @@
     display: inline-flex;
     padding-top: 15px;
     justify-content: center;
-    margin-top: 15px !important;
-    background-color: rgb(58, 151, 55) !important;
+
+    margin-top: 15px!important;
+    background-color: rgb(98, 165, 32)!important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* Reply and Seed Create Card Styling */
+
+.avatar-img {
+    text-align: right;
+}
+
+.first-post-container {
+    background-color:rgb(218,224,230);
+}
+
+.reply-btn {
+    background-color: rgba(0, 0, 0, 0.0);
+    box-shadow: none;
+    border: none;
+    transition: 0.3s;
+}
+
+.reply-btn:hover {
+    font-size: 90%;
+}
+
+.vote-icon {
+    margin: 2px;
+    height: 14px;
+    width: 14px;
+}
+
+.vote-tally-icon {
+    margin-top: 11px;
+    height: 14px;
+    width: 14px;
+}
+
+#tally {
+    display: inline-flex;
+    text-align: center;
+}
+
+#upvote-tally{
+    margin: 0;
+    padding-bottom: 5px;
+    padding: 5px;
+    vertical-align: baseline;   
+}
+
+#downvote-tally{
+    margin: 0;
+    padding-bottom: 5px;
+    padding: 5px;
+    vertical-align: baseline;
+}
+
+.post-card {
+    border: 1px rgb(158, 158, 158) solid;
+}
+
+#posted-by {
+    margin-bottom: 0;
+    margin-top: 12px;
+    margin-top: 15px !important;
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.15); */
 }
 
 #reply-box {
@@ -139,7 +204,13 @@
     width: 800px;
 }
 
-.thumbs {
+
+#sign-in-btn{
+    background-color:green;
+    float:right;
+}
+
+.thumbs{
     color: black;
 }
 
@@ -177,6 +248,7 @@
 #u-header{
     margin-top:10px;
     float:left;
+
 }
 
 #reply-reply{
